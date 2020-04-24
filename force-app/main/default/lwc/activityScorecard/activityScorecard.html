@@ -1,0 +1,142 @@
+<!--
+ - Created by jonathan.linn on 4/16/20.
+ -->
+
+<!-- Activity Scorecard -->
+<template>
+
+    <div class="card slds-card slds-p-around_medium">
+
+        <div class="title">
+            <span class ="slds-text-heading_small title slds-m-left_small ">{title}</span>
+        </div>
+
+
+        <div class="slds-grid slds-m-top_medium slds-m-bottom_medium" if:false={hideKpi}>
+
+            <div class="slds-col">
+                <div class="card slds-p-around_small slds-m-right_x-small">
+                    <div class="slds-text-heading_small slds-text-align_center">
+                        {kpi_1_title}
+                    </div>
+
+                        <div if:true={kpi1IsPositive} class="kpi-positive slds-text-align_center">
+                            {KpiOne}
+                        </div>
+                        <div if:false={kpi1IsPositive} class="kpi-negative slds-text-align_center">
+                            {KpiOne}
+                        </div>
+
+                </div>
+            </div>
+
+
+            <div class="slds-col">
+                <div class="card slds-p-around_small slds-m-left_x-small">
+                    <div class="slds-text-heading_small slds-text-align_center">
+                        {kpi_2_title}
+                    </div>
+
+                        <div if:true={kpi2IsPositive} class="kpi-positive slds-text-align_center">
+                            {KpiTwo}
+                        </div>
+                        <div if:false={kpi2IsPositive} class="kpi-negative slds-text-align_center">
+                            {KpiTwo}
+                        </div>
+                </div>
+            </div>
+        </div>
+
+<!--        This is the task component-->
+        <div class="slds-media activity-row slds-m-top_medium slds-m-bottom_small" if:false={hideTasks}>
+            <div class="slds-media__figure ">
+                <lightning-icon icon-name="standard:task" size="medium" class="icon"></lightning-icon>
+            </div>
+            <div class="slds-media__body slds-m-left_x-small">
+                <div class="slds-text-body_regular slds-m-bottom_xx-small">
+                    {taskKpi} &nbsp; {taskLabel}
+                </div>
+                    <div class="slds-progress-bar slds-progress-bar_circular" aria-valuemin="0" aria-valuemax="100"  role="progressbar">
+
+                          <span class="slds-progress-bar__value" style={tasksCompletedStyleSyntax}>
+
+                          </span>
+
+                    </div>
+
+                    <div class="slds-text-body_regular slds-text-color_weak slds-text-align_right slds-m-top_xx-small">
+                        Goal: {taskGoal}
+                    </div>
+            </div>
+        </div>
+
+        <!--        This is the Calls component-->
+        <div class="slds-media activity-row slds-m-top_medium slds-m-bottom_small" if:false={hideCalls}>
+            <div class="slds-media__figure ">
+                <lightning-icon icon-name="standard:log_a_call" size="medium" class="icon"></lightning-icon>
+            </div>
+            <div class="slds-media__body slds-m-left_x-small">
+                <div class="slds-text-body_regular slds-m-bottom_xx-small">
+                    {callKpi} &nbsp; {callLabel}
+                </div>
+                    <div class="slds-progress-bar slds-progress-bar_circular" aria-valuemin="0" aria-valuemax="100"  role="progressbar">
+
+                          <span class="slds-progress-bar__value" style={callsCompletedStyleSyntax}>
+
+                          </span>
+
+                    </div>
+
+                    <div class="slds-text-body_regular slds-text-color_weak slds-text-align_right slds-m-top_xx-small">
+                        Goal: {callGoal}
+                    </div>
+            </div>
+        </div>
+
+        <!--        This is the Email component-->
+        <div class="slds-media activity-row slds-m-top_medium slds-m-bottom_small" if:false={hideEmails}>
+            <div class="slds-media__figure ">
+                <lightning-icon icon-name="standard:list_email" size="medium" class="icon"></lightning-icon>
+            </div>
+            <div class="slds-media__body slds-m-left_x-small">
+                <div class="slds-text-body_regular slds-m-bottom_xx-small">
+                    {emailKpi} &nbsp; {emailLabel}
+                </div>
+                    <div class="slds-progress-bar slds-progress-bar_circular" aria-valuemin="0" aria-valuemax="100"  role="progressbar">
+
+                          <span class="slds-progress-bar__value" style={emailsCompletedStyleSyntax}>
+
+                          </span>
+
+                    </div>
+
+                    <div class="slds-text-body_regular slds-text-color_weak slds-text-align_right slds-m-top_xx-small">
+                        Goal: {emailGoal}
+                    </div>
+            </div>
+        </div>
+
+        <!--        This is the Event component-->
+        <div class="slds-media activity-row slds-m-top_medium slds-m-bottom_small" if:false={hideEvents}>
+            <div class="slds-media__figure ">
+                <lightning-icon icon-name="standard:event" size="medium" class="icon"></lightning-icon>
+            </div>
+            <div class="slds-media__body slds-m-left_x-small">
+                <div class="slds-text-body_regular slds-m-bottom_xx-small">
+                    {eventKpi} &nbsp; {eventLabel}
+                </div>
+                    <div class="slds-progress-bar slds-progress-bar_circular" aria-valuemin="0" aria-valuemax="100"  role="progressbar">
+
+                          <span class="slds-progress-bar__value" style={eventsCompletedStyleSyntax}>
+
+                          </span>
+
+                    </div>
+
+                    <div class="slds-text-body_regular slds-text-color_weak slds-text-align_right slds-m-top_xx-small">
+                        Goal: {eventGoal}
+                    </div>
+            </div>
+        </div>
+    </div>
+</template>

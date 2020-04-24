@@ -1,0 +1,28 @@
+/**
+ * Created by jonathan.linn on 4/16/20.
+ */
+
+.kpi-positive {
+    font-size: xx-large;
+    color: #028048;
+
+}
+.kpi-negative {
+    font-size: xx-large;
+    color: #c23934;
+}
+
+.card {
+    border: 1px solid rgb(216, 221, 230);
+    border-radius: 4px;
+}
+
+.icon {
+    margin-top: 3px
+
+
+}
+
+.text-bold{
+    font-weight: bold;
+}
