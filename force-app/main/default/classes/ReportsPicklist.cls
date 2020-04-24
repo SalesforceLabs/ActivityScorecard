@@ -2,7 +2,7 @@
  * Created by jonathan.linn on 4/20/20.
  */
 
-global class ReportsPicklist extends VisualEditor.DynamicPickList {
+global with sharing class ReportsPicklist extends VisualEditor.DynamicPickList {
 
     global override VisualEditor.DataRow getDefaultValue() {
         Report r = [SELECT Id, Name FROM report LIMIT 1][0];
