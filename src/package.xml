@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>ReportsPicklist</members>
+        <members>ReportsPicklistTest</members>
+        <members>ReportsValues</members>
+        <members>ReportsValuesTest</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>LightningComponentBundle</name>
+    </types>
+    <version>48.0</version>
+</Package>
