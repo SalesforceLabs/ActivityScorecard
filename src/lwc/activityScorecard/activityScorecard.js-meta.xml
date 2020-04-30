@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>48.0</apiVersion>
+    <description>Activity Scorecard</description>
+    <isExposed>true</isExposed>
+    <masterLabel>Activity Scorecard</masterLabel>
+    <targets>
+        <target>lightning__HomePage</target>
+        <target>lightning__AppPage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__HomePage">
+            <property
+                    name="title"
+                    type="String"
+                    default="Activity Scorecard"
+                    label="Component Title"
+                    description="Customize the Title of the component">
+            </property>
+            <property
+                    name="kpi_1_title"
+                    type="String"
+                    default="Deals Won"
+                    label="Name of KPI #1"
+                    description="Which is the first KPI you would like to track?">
+            </property>
+            <property
+                    name="kpi_2_title"
+                    type="String"
+                    default="Deals Lost"
+                    label="Name of KPI #2"
+                    description="Which is the second KPI you would like to track?">
+            </property>
+            <property
+                    name="hideKpi"
+                    type="Boolean"
+                    label="Hide KPIs?"
+                    description="Would you like to hide the two KPIs at the top of the report?">
+            </property>
+            <property
+                    name="hideTasks"
+                    type="Boolean"
+                    default="false"
+                    label="Hide Tasks?"
+                    description="Would you like to hide the Tasks report?">
+            </property>
+            <property
+                    name="hideCalls"
+                    type="Boolean"
+                    default="false"
+                    label="Hide Calls?"
+                    description="Would you like to hide the Calls report?">
+            </property>
+            <property
+                    name="hideEmails"
+                    type="Boolean"
+                    default="false"
+                    label="Hide Emails?"
+                    description="Would you like to hide the Email report?">
+            </property>
+            <property
+                    name="hideEvents"
+                    type="Boolean"
+                    default="false"
+                    label="Hide Events?"
+                    description="Would you like to hide the Events report?">
+            </property>
+            <property
+                    name="kpi1ReportId"
+                    type="String"
+                    datasource="apex://ReportsPicklist"
+                    label="KPI 1 Report Id"
+                    description="Select the Report ID that will supply the first KPI">
+            </property>
+            <property
+                    name="kpi1GoalValue"
+                    type="Integer"
+                    default="100"
+                    label="KPI 1 Goal"
+                    description="What is the goal for the first KPI?">
+            </property>
+            <property
+                    name="kpi1GoalFlip"
+                    type="Boolean"
+                    default="false"
+                    label="KPI 1 Goal Flip"
+                    description="Flip what is good for this KPI?">
+            </property>
+            <property
+                    name="kpi2ReportId"
+                    type="String"
+                    datasource="apex://ReportsPicklist"
+                    label="KPI 2 Report Id"
+                    description="Select the Report ID that will supply the second KPI">
+            </property>
+            <property
+                    name="kpi2GoalValue"
+                    type="Integer"
+                    default="100"
+                    label="KPI 2 Goal"
+                    description="What is the goal for the second KPI?">
+            </property>
+            <property
+                    name="kpi2GoalFlip"
+                    type="Boolean"
+                    default="false"
+                    label="KPI 2 Goal Flip"
+                    description="Flip what is good for this KPI?">
+            </property>
+            <property
+                    name="taskReportId"
+                    type="String"
+                    datasource="apex://ReportsPicklist"
+                    label="Task Report"
+                    description="Select the Report ID that will supply the Tasks">
+            </property>
+            <property
+                    name="taskGoal"
+                    type="Integer"
+                    default="100"
+                    label="Task Goal"
+                    description="What is the goal for Tasks?"
+                    min="0">
+            </property>
+            <property
+                    name="callReportId"
+                    type="String"
+                    datasource="apex://ReportsPicklist"
+                    label="Call Report"
+                    description="Select the Report ID that will supply the Calls">
+            </property>
+            <property
+                    name="callGoal"
+                    type="Integer"
+                    default="100"
+                    label="Call Goal"
+                    description="What is the goal for Calls?"
+                    min="0">
+            </property>
+            <property
+                    name="emailReportId"
+                    type="String"
+                    datasource="apex://ReportsPicklist"
+                    label="Email Report"
+                    description="Select the Report ID that will supply the Emails">
+            </property>
+            <property
+                    name="emailGoal"
+                    type="Integer"
+                    default="100"
+                    label="Email Goal"
+                    description="What is the goal for Emails?"
+                    min="0">
+            </property>
+            <property
+                    name="eventReportId"
+                    type="String"
+                    datasource="apex://ReportsPicklist"
+                    label="Event Report"
+                    description="Select the Report ID that will supply the Events">
+            </property>
+            <property
+                    name="eventGoal"
+                    type="Integer"
+                    default="100"
+                    label="Event Goal"
+                    description="What is the goal for Events?"
+                    min="0">
+            </property>
+        </targetConfig>
+        <targetConfig targets="lightning__AppPage">
+            <property
+                    name="title"
+                    type="String"
+                    default="Activity Scorecard"
+                    label="Component Title"
+                    description="Customize the Title of the component">
+            </property>
+            <property
+                    name="kpi_1_title"
+                    type="String"
+                    default="Deals Won"
+                    label="Name of KPI #1"
+                    description="Which is the first KPI you would like to track?">
+            </property>
+            <property
+                    name="kpi_2_title"
+                    type="String"
+                    default="Deals Lost"
+                    label="Name of KPI #2"
+                    description="Which is the second KPI you would like to track?">
+            </property>
+            <property
+                    name="hideKpi"
+                    type="Boolean"
+                    label="Hide KPIs?"
+                    description="Would you like to hide the two KPIs at the top of the report?">
+            </property>
+            <property
+                    name="hideTasks"
+                    type="Boolean"
+                    default="false"
+                    label="Hide Tasks?"
+                    description="Would you like to hide the Tasks report?">
+            </property>
+            <property
+                    name="hideCalls"
+                    type="Boolean"
+                    default="false"
+                    label="Hide Calls?"
+                    description="Would you like to hide the Calls report?">
+            </property>
+            <property
+                    name="hideEmails"
+                    type="Boolean"
+                    default="false"
+                    label="Hide Emails?"
+                    description="Would you like to hide the Email report?">
+            </property>
+            <property
+                    name="hideEvents"
+                    type="Boolean"
+                    default="false"
+                    label="Hide Events?"
+                    description="Would you like to hide the Events report?">
+            </property>
+            <property
+                    name="kpi1ReportId"
+                    type="String"
+                    datasource="apex://ReportsPicklist"
+                    label="KPI 1 Report Id"
+                    description="Select the Report ID that will supply the first KPI">
+            </property>
+            <property
+                    name="kpi1GoalValue"
+                    type="Integer"
+                    default="100"
+                    label="KPI 1 Goal"
+                    description="What is the goal for the first KPI?">
+            </property>
+            <property
+                    name="kpi1GoalFlip"
+                    type="Boolean"
+                    default="false"
+                    label="KPI 1 Goal Flip"
+                    description="Flip what is good for this KPI?">
+            </property>
+            <property
+                    name="kpi2ReportId"
+                    type="String"
+                    datasource="apex://ReportsPicklist"
+                    label="KPI 2 Report Id"
+                    description="Select the Report ID that will supply the second KPI">
+            </property>
+            <property
+                    name="kpi2GoalValue"
+                    type="Integer"
+                    default="100"
+                    label="KPI 2 Goal"
+                    description="What is the goal for the second KPI?">
+            </property>
+            <property
+                    name="kpi2GoalFlip"
+                    type="Boolean"
+                    default="false"
+                    label="KPI 2 Goal Flip"
+                    description="Flip what is good for this KPI?">
+            </property>
+            <property
+                    name="taskReportId"
+                    type="String"
+                    datasource="apex://ReportsPicklist"
+                    label="Task Report"
+                    description="Select the Report ID that will supply the Tasks">
+            </property>
+            <property
+                    name="taskGoal"
+                    type="Integer"
+                    default="100"
+                    label="Task Goal"
+                    description="What is the goal for Tasks?"
+                    min="0">
+            </property>
+            <property
+                    name="callReportId"
+                    type="String"
+                    datasource="apex://ReportsPicklist"
+                    label="Call Report"
+                    description="Select the Report ID that will supply the Calls">
+            </property>
+            <property
+                    name="callGoal"
+                    type="Integer"
+                    default="100"
+                    label="Call Goal"
+                    description="What is the goal for Calls?"
+                    min="0">
+            </property>
+            <property
+                    name="emailReportId"
+                    type="String"
+                    datasource="apex://ReportsPicklist"
+                    label="Email Report"
+                    description="Select the Report ID that will supply the Emails">
+            </property>
+            <property
+                    name="emailGoal"
+                    type="Integer"
+                    default="100"
+                    label="Email Goal"
+                    description="What is the goal for Emails?"
+                    min="0">
+            </property>
+            <property
+                    name="eventReportId"
+                    type="String"
+                    datasource="apex://ReportsPicklist"
+                    label="Event Report"
+                    description="Select the Report ID that will supply the Events">
+            </property>
+            <property
+                    name="eventGoal"
+                    type="Integer"
+                    default="100"
+                    label="Event Goal"
+                    description="What is the goal for Events?"
+                    min="0">
+            </property>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>
