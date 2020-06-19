@@ -13,7 +13,7 @@
             <property
                     name="title"
                     type="String"
-                    default="Activity Scorecard"
+                    default="Activity Scorecard (Last 7 Days)"
                     label="Component Title"
                     description="Customize the Title of the component">
             </property>
@@ -27,7 +27,7 @@
             <property
                     name="kpi_2_title"
                     type="String"
-                    default="Deals Lost"
+                    default="Leads Created"
                     label="Name of KPI #2"
                     description="Which is the second KPI you would like to track?">
             </property>
@@ -68,7 +68,7 @@
             <property
                     name="kpi1ReportId"
                     type="String"
-                    datasource="apex://ReportsPicklist"
+                    datasource="apex://ReportsPicklistKPI1"
                     label="KPI 1 Report Id"
                     description="Select the Report ID that will supply the first KPI">
             </property>
@@ -89,7 +89,7 @@
             <property
                     name="kpi2ReportId"
                     type="String"
-                    datasource="apex://ReportsPicklist"
+                    datasource="apex://ReportsPicklistKPI2"
                     label="KPI 2 Report Id"
                     description="Select the Report ID that will supply the second KPI">
             </property>
@@ -110,7 +110,7 @@
             <property
                     name="taskReportId"
                     type="String"
-                    datasource="apex://ReportsPicklist"
+                    datasource="apex://ReportsPicklistTasks"
                     label="Task Report"
                     description="Select the Report ID that will supply the Tasks">
             </property>
@@ -125,7 +125,7 @@
             <property
                     name="callReportId"
                     type="String"
-                    datasource="apex://ReportsPicklist"
+                    datasource="apex://ReportsPicklistCalls"
                     label="Call Report"
                     description="Select the Report ID that will supply the Calls">
             </property>
@@ -140,7 +140,7 @@
             <property
                     name="emailReportId"
                     type="String"
-                    datasource="apex://ReportsPicklist"
+                    datasource="apex://ReportsPicklistEmails"
                     label="Email Report"
                     description="Select the Report ID that will supply the Emails">
             </property>
@@ -155,7 +155,7 @@
             <property
                     name="eventReportId"
                     type="String"
-                    datasource="apex://ReportsPicklist"
+                    datasource="apex://ReportsPicklistEvents"
                     label="Event Report"
                     description="Select the Report ID that will supply the Events">
             </property>
