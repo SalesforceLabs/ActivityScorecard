@@ -2,10 +2,10 @@
  * Created by jonathan.linn on 6/19/20.
  */
 
-global with sharing class ReportsPicklistTasks extends VisualEditor.DynamicPickList {
+global with sharing class ReportsPicklistEvents2 extends VisualEditor.DynamicPickList {
 
     global override VisualEditor.DataRow getDefaultValue() {
-        Report r = [SELECT Id, Name FROM report WHERE Name = 'My Completed Tasks (Last 7 Days)' LIMIT 1][0];
+        Report r = [SELECT Id, Name FROM report WHERE Name = 'My Logged Events (Last 7 Days)' LIMIT 1][0];
         VisualEditor.DataRow defaultValue = new VisualEditor.DataRow(r.Name, (String)r.Id, true);
         return defaultValue;
     }

@@ -53,6 +53,14 @@ private class ReportsPicklistTest {
     }
 
     @IsTest(SeeAllData=true)
+    static void testPicklistsEvents2() {
+        ReportsPicklistEvents2 rp = new ReportsPicklistEvents2();
+        rp.getValues();
+
+        System.assertNotEquals(0, rp.getValues().size());
+    }
+
+    @IsTest(SeeAllData=true)
     static void testPicklistsEvents() {
         ReportsPicklistEvents rp = new ReportsPicklistEvents();
         rp.getValues();
