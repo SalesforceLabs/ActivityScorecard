@@ -1,7 +1,7 @@
 /**
  * Created by jonathan.linn on 6/19/20.
  */
-
+@Deprecated
 global with sharing class ReportsPicklistEvents2 extends VisualEditor.DynamicPickList {
 
     global override VisualEditor.DataRow getDefaultValue() {
@@ -12,14 +12,11 @@ global with sharing class ReportsPicklistEvents2 extends VisualEditor.DynamicPic
 
     global override VisualEditor.DynamicPickListRows getValues() {
 
-//        Map<Id, Report> reportMap = new Map<Id, Report>([SELECT Id, Name FROM Report]);
-        List<Report> reportList = new List<Report>([SELECT Id, Name FROM Report]);
-        VisualEditor.DynamicPickListRows myValues = new VisualEditor.DynamicPickListRows();
+        ReportList rl = new ReportList();
+        return rl.getValues();
+    }
 
-        for(Report r : reportList) {
-            myValues.addRow(new VisualEditor.DataRow(r.Name, (String)r.Id));
-        }
-
-        return myValues;
+    global override Boolean isValid(Object attr) {
+        return true;
     }
 }
