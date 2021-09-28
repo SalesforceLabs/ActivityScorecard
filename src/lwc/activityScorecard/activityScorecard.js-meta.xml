@@ -157,7 +157,7 @@
             <property
                     name="eventReportId"
                     type="String"
-                    datasource="apex://ReportsPicklistEvents2"
+                    datasource="apex://ReportsPicklistEvents"
                     label="Event Report"
                     description="Select the Report ID that will supply the Events">
             </property>

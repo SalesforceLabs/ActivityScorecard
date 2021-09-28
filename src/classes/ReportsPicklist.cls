@@ -22,4 +22,8 @@ global with sharing class ReportsPicklist extends VisualEditor.DynamicPickList {
 
         return myValues;
     }
+
+    global override Boolean isValid(Object attr) {
+        return true;
+    }
 }
